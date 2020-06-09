@@ -36,6 +36,10 @@ def createServer():
                         header += "Content-Type: image/ico\r\n\r\n"
                     elif req_file.endswith(".html"):
                         header += "Content-Type: text/html\r\n\r\n"
+                    elif req_file.endswith(".jpg"):
+                        header += "Content-Type: image/jpg\r\n\r\n"
+                    elif req_file.endswith(".css"):
+                        header += "Content-Type: text/css\r\n\r\n"
                 except Exception as e:
                     header = "HTTP/1.1 404 Not Found\r\n\r\n"
                     file = open("404.html", "rb")

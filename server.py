@@ -2,7 +2,7 @@ from socket import *
 import time
 
 PORT = 9000
-SERVER = '127.0.0.1'
+SERVER = '192.168.137.48' # Để test thì đổi IP này
 FORMAT = 'utf-8'
 
 def createServer():
@@ -66,10 +66,12 @@ def createServer():
                     final_res = header.encode(FORMAT)
                     final_res += response
                     conn.send(final_res)
+            
             conn.close()    
     except KeyboardInterrupt :
         print("\nShutting down...\n")
     
+ 
     print("close")
     serversocket.close()
 

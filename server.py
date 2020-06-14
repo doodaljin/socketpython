@@ -25,6 +25,7 @@ def createServer():
             if method == "GET":
                 req_file = str_list[1]
                 req_file = req_file.lstrip('/')
+                req_file = req_file.replace("%20", " ")
                 if (req_file == ''):
                     req_file = 'index.html'
                 try:

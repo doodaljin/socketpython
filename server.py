@@ -2,7 +2,7 @@ from socket import *
 import time
 
 PORT = 9000
-SERVER = '192.168.137.48' # Để test thì đổi IP này
+SERVER = '127.0.0.1' # Để test thì đổi IP này
 FORMAT = 'utf-8'
 
 def createServer():
@@ -40,6 +40,8 @@ def createServer():
                         header += "Content-Type: image/jpg\r\n\r\n"
                     elif req_file.endswith(".css"):
                         header += "Content-Type: text/css\r\n\r\n"
+                    else:
+                        header += "Content=Type: text/html\r\n\r\n"
                 except Exception as e:
                     header = "HTTP/1.1 404 Not Found\r\n\r\n"
                     file = open("404.html", "rb")
